@@ -20,6 +20,6 @@ public class HelloRest  {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        return "\nWooo works!\n";
+        return "\nHello REST works FINE!\n";
     }
 }

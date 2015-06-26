@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Rest:war exploded">
-    <output-path>$PROJECT_DIR$/target/Rest</output-path>
+  <artifact type="exploded-war" build-on-make="true" name="Rest2:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Rest2_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -30,10 +30,8 @@
           <element id="library" level="project" name="Maven: org.eclipse.persistence:org.eclipse.persistence.core:2.6.0" />
           <element id="library" level="project" name="Maven: org.eclipse.persistence:org.eclipse.persistence.asm:2.6.0" />
           <element id="library" level="project" name="Maven: org.glassfish:javax.json:1.0.4" />
+          <element id="library" level="module" name="JUnit4" module-name="Rest" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="Rest/web/Web" />
     </root>
