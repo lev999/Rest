@@ -2,6 +2,8 @@ package home;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Root resource (exposed at "myresource" path)
@@ -56,6 +58,18 @@ public class GetWithParams {
         MultivaluedMap<String,String> headersMap = headers.getRequestHeaders();
         for (String key : headersMap.keySet()) {
             stringBuilder.append("key="+key+" value="+headersMap.get(key)+"\n");
+        }
+
+        return stringBuilder.toString();
+    }
+
+    @Path("/arrayList")
+    @GET
+    public String getArray(@DefaultValue("no value")@QueryParam("Array")List<String> arrayList){
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i <arrayList.size(); i++) {
+            stringBuilder.append(arrayList.get(i));
         }
 
         return stringBuilder.toString();
