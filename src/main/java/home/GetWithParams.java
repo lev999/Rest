@@ -1,10 +1,7 @@
 package home;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.core.*;
 
 /**
  * Root resource (exposed at "myresource" path)
@@ -30,7 +27,7 @@ public class GetWithParams {
 
     @Path("/allData/{a}/{b}/{c}")
     @GET
-    public String allParams(@Context UriInfo info){
+    public String allParams(@Context UriInfo info,@Context HttpHeaders headers){
 
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -54,6 +51,12 @@ public class GetWithParams {
             stringBuilder.append("\n");
         }
 
+
+        stringBuilder.append("\nHeaders:\n");
+        MultivaluedMap<String,String> headersMap = headers.getRequestHeaders();
+        for (String key : headersMap.keySet()) {
+            stringBuilder.append("key="+key+" value="+headersMap.get(key)+"\n");
+        }
 
         return stringBuilder.toString();
     }
