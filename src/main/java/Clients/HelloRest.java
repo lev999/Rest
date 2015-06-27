@@ -1,13 +1,12 @@
 package Clients;
 
-import baseClass.BaseClass;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 
-public class HelloRest extends BaseClass{
+public class HelloRest extends baseclass{
 
     public static void main(String[] args) {
         getResponse();
